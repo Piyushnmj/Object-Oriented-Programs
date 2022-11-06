@@ -67,7 +67,6 @@ namespace ObjectOrientedPrograms.Repository
             }
             saveCompany();
 
-            //StockAccount();
             foreach (var item in objstockAccounts) //Stock Data credited to Customer Account
             {
                 if (item.CustomerInfo.CustomerName == customerName)
@@ -93,8 +92,8 @@ namespace ObjectOrientedPrograms.Repository
                             {
                                 item.ShareDetails.Add(new ShareDetails() { CompanyName = stockName, NoOfShares = numOfShares, PricePerShare = marketSharePrice });
                             }
-                            Console.WriteLine($"\nTransaction Completed. Bought {numOfShares} shares of {stockName} for a price of {valueOfSharesBought}.");
-                            
+                            Console.WriteLine($"\nTransaction Completed. Bought {numOfShares} shares of {stockName} for a price of {valueOfSharesBought} at {DateTime.Now}.");
+                            Console.WriteLine($"Account Balance: {totalBalance}");
                         }
                         else
                         {
@@ -178,8 +177,8 @@ namespace ObjectOrientedPrograms.Repository
                 }
             }
             saveCompany();
-            Console.WriteLine($"\nTransaction Completed. Sold {numOfShares} shares of {stockName} for a price of {valueOfSharesSold}.");
-            
+            Console.WriteLine($"\nTransaction Completed. Sold {numOfShares} shares of {stockName} for a price of {valueOfSharesSold} at {DateTime.Now}.");
+            Console.WriteLine($"Account Balance: {totalBalance}");
         }
 
         public void saveCompany()
@@ -255,5 +254,4 @@ namespace ObjectOrientedPrograms.Repository
             }
         }
     }
-
 }
